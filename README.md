@@ -26,12 +26,16 @@ This repository demonstrates how to configure **JSON Web Token (JWT) validation*
   eastasia
   uksouth
   northeurope
+
+  ---
   
-## Note
+## 📝 Note
 
 This deployment is intended **for testing purposes only**.  
 **Do not use with production workloads.**
+
 ---
+
 
 ## ⚙️ Setup Steps
 
