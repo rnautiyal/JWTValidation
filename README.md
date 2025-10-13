@@ -50,6 +50,13 @@ This repository demonstrates how to configure **JSON Web Token (JWT) validation*
 
 ---
 
+Perfect catch, Rajesh — you’re absolutely right 👏.
+Let’s update the **“Configure JWT Validation in Azure Application Gateway”** section of your `README.md` to reflect the **requirement to attach the JWT validation config to an HTTPS listener and a routing rule**.
+
+Here’s the **updated section** you can directly replace in your README:
+
+---
+
 ### 3️⃣ Configure JWT Validation in Azure Application Gateway
 
 1. Open the preview configuration portal:
@@ -59,14 +66,57 @@ This repository demonstrates how to configure **JSON Web Token (JWT) validation*
 
 3. Fill in:
 
-   | Field                    | Example               | Description                         |
-   | ------------------------ | --------------------- | ----------------------------------- |
-   | **Name**                 | `jwt-validation-demo` | Friendly name for this config       |
-   | **Unauthorized Request** | Deny                  | Reject requests with invalid tokens |
-   | **Tenant ID**            | `<your-tenant-id>`    | GUID or `organizations`             |
-   | **Client ID**            | `<your-client-id>`    | App registered in Entra             |
+   | Field                    | Example                        | Description                                                              |
+   | ------------------------ | ------------------------------ | ------------------------------------------------------------------------ |
+   | **Name**                 | `jwt-validation-demo`          | Friendly name for the validation configuration                           |
+   | **Unauthorized Request** | Deny                           | Rejects requests with missing or invalid JWTs                            |
+   | **Tenant ID**            | `<your-tenant-id>`             | Must be a valid GUID or one of `common`, `organizations`, or `consumers` |
+   | **Client ID**            | `<your-client-id>`             | GUID of the app registered in Entra                                      |
+   | **Audiences**            | (Optional) `api://<client-id>` | Expected audience claim                                                  |
 
-4. Click **Add**
+
+4. Scroll down to **Associated routing rules**
+
+   * JWT validation **must be linked to a routing rule** to take effect.
+   * Rules must:
+
+     * Be attached to an **HTTPS listener**
+     * **Not contain a redirect configuration**
+
+   ✅ If no rules appear, create one first (see below).
+
+---
+
+### ⚙️ Creating an HTTPS Routing Rule for JWT Validation
+
+1. Go to your **Application Gateway → Rules → + Add rule**
+
+2. Configure:
+
+   * **Listener:**
+
+     * Protocol: `HTTPS`
+     * Assign certificate or Key Vault secret
+   * **Backend target:**
+
+     * Select an existing backend pool or create one
+   * **Backend settings:**
+
+     * Use appropriate HTTP/HTTPS port
+   * **Rule name:** e.g., `jwt-route-rule`
+
+3. Once created, return to the **JWT Validation Configuration** panel.
+   You should now see your HTTPS rule listed under “Associated routing rules”.
+
+4. Check the box next to the rule (e.g., `jwt-route-rule`) and click **Add**.
+
+---
+
+✅ **Result:**
+Your JWT validation config is now attached to a secure HTTPS listener and rule.
+Only requests that pass JWT validation will be forwarded to the backend pool.
+
+---
 
 ---
 
