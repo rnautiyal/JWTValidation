@@ -53,12 +53,7 @@ This repository demonstrates how to configure **JSON Web Token (JWT) validation*
 
 ---
 
-Perfect catch, Rajesh — you’re absolutely right 👏.
-Let’s update the **“Configure JWT Validation in Azure Application Gateway”** section of your `README.md` to reflect the **requirement to attach the JWT validation config to an HTTPS listener and a routing rule**.
 
-Here’s the **updated section** you can directly replace in your README:
-
----
 
 ### 3️⃣ Configure JWT Validation in Azure Application Gateway
 
