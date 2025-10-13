@@ -1,5 +1,3 @@
-Perfect 🔥 — here’s a **ready-to-drop-in `README.md`** for your GitHub repo.
-It’s structured, developer-friendly, and GitHub-formatted — includes badges, setup script link, portal links, and end-to-end JWT validation flow for Azure Application Gateway.
 
 ---
 
