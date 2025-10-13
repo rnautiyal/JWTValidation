@@ -169,5 +169,4 @@ Tenant ID: 72f988bf-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 
 ---
 
-Would you like me to include a **diagram (JWT validation flow through AppGW + Entra)** in the README (as an embedded image or ASCII diagram)?
-It visually shows how the token travels from client → AppGW → backend for verification.
+
