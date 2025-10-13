@@ -1,8 +1,4 @@
-# JWTValidation
-Azure Application Gateway steps to validate JWT token 
-Got it — here’s exactly how you can complete those GitHub setup steps and configure JWT validation with Azure Application Gateway:
-
----
+# JWTValidation with Azure Application Gateway
 
 ### 🧩 **Step 1 — Register an App in Microsoft Entra ID**
 
@@ -31,7 +27,7 @@ After registration:
 
 Store it securely — it won’t be visible again.
 
----
+
 
 ### ⚙️ **Step 3 — Configure JWT Validation in Azure Application Gateway**
 
@@ -47,7 +43,7 @@ Store it securely — it won’t be visible again.
    * **Audience (optional):** leave blank or specify the same Client ID
 4. Click **Add.**
 
----
+
 
 ### 🧠 **Step 4 — Retrieve Access Token using Azure CLI**
 
@@ -70,7 +66,7 @@ You can verify the token by printing:
 echo "$TOKEN"
 ```
 
----
+
 
 ### 🌐 **Step 5 — Test JWT Validation via Application Gateway**
 
@@ -85,12 +81,4 @@ curl -k \
 If configured correctly, you should receive a **200 OK** response from the backend (authorized).
 If JWT validation fails, you’ll receive a **401 Unauthorized** or **403 Forbidden** response.
 
----
-
-Would you like me to generate a **`setup.sh`** script (automated version of these steps) that you can include directly in your GitHub repo? It can:
-
-* Register the app via Azure CLI
-* Capture the Tenant/Client IDs
-* Create the secret
-* Configure the App Gateway automatically.
 
