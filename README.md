@@ -158,57 +158,9 @@ curl -k \
 
 ---
 
-### 6️⃣ (Optional) Automate Setup
-
-Use the included [`setup.sh`](./setup.sh) script to automate:
-
-* App registration
-* Secret creation
-* JWT validation config
-* Token generation and verification
-
-#### Run
-
-```bash
-chmod +x setup.sh
-./setup.sh
-```
-
-The script will output:
-
-* Tenant ID
-* Client ID
-* Token
-* Verification results from Application Gateway
-
----
-
-## 🧾 Outputs Example
-
-```bash
-✅ App registered successfully.
-Client ID: 5f2e4d5e-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-Tenant ID: 72f988bf-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-✅ JWT validation configured.
-✅ Token retrieved and verified successfully.
-```
-
----
-
-### 🧱 Repository Structure
-
-```
-├── setup.sh          # Automates Entra registration + JWT config
-├── README.md         # Documentation (this file)
-└── examples/
-    └── test-curl.sh  # Example verification command
-```
-
----
-
 ### 🧠 Notes
 
-* The JWT validation feature requires the **App Gateway Preview** feature flags enabled.
+* The JWT validation feature requires the **App Gateway Preview** feature flags enabled for portal.
 * You can use the same token to authenticate to other Azure resources if the scope is set properly.
 * For multi-tenant apps, use `organizations` instead of Tenant GUID.
 
