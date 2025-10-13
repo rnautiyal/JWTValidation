@@ -18,6 +18,7 @@ This repository demonstrates how to configure **JSON Web Token (JWT) validation*
 * `jq` installed for JSON parsing
 * Contributor or Owner permissions in the target subscription
 * Existing Azure Application Gateway
+* Backend Application that need protection
 * Supported regions
   eastus2euap
   centraluseuap
