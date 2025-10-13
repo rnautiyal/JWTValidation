@@ -121,8 +121,6 @@ Only requests that pass JWT validation will be forwarded to the backend pool.
 
 ---
 
----
-
 ### 4️⃣ Retrieve Access Token via CLI
 
 ```bash
@@ -169,7 +167,6 @@ curl -k \
 ### 📚 References
 
 * [Azure Application Gateway – JWT Validation (Preview)](https://learn.microsoft.com/azure/application-gateway/configuration-overview)
-* [Azure CLI – Service Principal Auth](https://learn.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli)
 * [Microsoft Entra ID App Registrations](https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app)
 
 ---
