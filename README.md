@@ -18,6 +18,13 @@ This repository demonstrates how to configure **JSON Web Token (JWT) validation*
 * `jq` installed for JSON parsing
 * Contributor or Owner permissions in the target subscription
 * Existing Azure Application Gateway
+* Supported regions
+  eastus2euap
+  centraluseuap
+  westcentralus
+  eastasia
+  uksouth
+  northeurope
 
 ---
 
@@ -52,7 +59,6 @@ This repository demonstrates how to configure **JSON Web Token (JWT) validation*
 > ⚠️ Store this securely — it won’t be shown again.
 
 ---
-
 
 
 ### 3️⃣ Configure JWT Validation in Azure Application Gateway
