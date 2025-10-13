@@ -23,6 +23,9 @@ This repository demonstrates how to configure **JSON Web Token (JWT) validation*
 
 ## ⚙️ Setup Steps
 
+<img width="898" height="1053" alt="image" src="https://github.com/user-attachments/assets/39cd0ce9-ef3d-4ae6-83a7-598816cbac0d" />
+
+
 ### 1️⃣ Register an Application in Entra ID
 
 1. Go to [**Azure Portal → App registrations**](https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade)
