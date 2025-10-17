@@ -85,7 +85,7 @@ This deployment is intended **for testing purposes only**.
    | **Unauthorized Request** | Deny                           | Rejects requests with missing or invalid JWTs                            |
    | **Tenant ID**            | `<your-tenant-id>`             | Must be a valid GUID or one of `common`, `organizations`, or `consumers` |
    | **Client ID**            | `<your-client-id>`             | GUID of the app registered in Entra                                      |
-   | **Audiences**            | (Optional) `api://<client-id>` | Expected audience claim                                                  |
+   | **Audiences**            | (Optional) `api://<client-id>` | Expected audience claim. It need to match to scope value                                                 |
 
 
 4. Scroll down to **Associated routing rules**
@@ -146,7 +146,7 @@ TOKEN=$(az account get-access-token \
 
 echo "$TOKEN"
 ```
-
+Please note - JWT config audience value should match  scope value - https://management.azure.com/.default
 ---
 
 ### 5️⃣ Verify Token with Application Gateway
