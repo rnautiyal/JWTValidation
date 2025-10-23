@@ -135,7 +135,7 @@ TOKEN=$(az account get-access-token \
 
 echo "$TOKEN"
 ```
-Please note - JWT config audiences value in step 3 above should match  scope value - https://management.azure.com
+Please note - JWT config audiences value in step 3 above should match  scope value - https://management.azure.com (ignore .default)
 ---
 
 ### 5️⃣ Verify Token with Application Gateway
