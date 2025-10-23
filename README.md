@@ -58,16 +58,6 @@ This deployment is intended **for testing purposes only**.
 
 ---
 
-### 2️⃣ Create a Client Secret
-
-1. Navigate to **Certificates & Secrets**
-2. Click **+ New client secret**
-3. Give it a name (e.g. `appgw-secret`)
-4. Copy the **Value** (not the Secret ID) → this is your `CLIENT_SECRET`
-
-> ⚠️ Store this securely — it won’t be shown again.
-
----
 
 
 ### 3️⃣ Configure JWT Validation in Azure Application Gateway
@@ -139,14 +129,13 @@ CLIENT_SECRET="<your-client-secret>"
 TENANT_ID="<your-tenant-id>"
 
 TOKEN=$(az account get-access-token \
-  --service-principal -u "$CLIENT_ID" -p "$CLIENT_SECRET" \
-  --tenant "$TENANT_ID" \
+    --tenant "$TENANT_ID" \
   --scope "https://management.azure.com/.default" \
   --query accessToken -o tsv)
 
 echo "$TOKEN"
 ```
-Please note - JWT config audiences value in step 3 above should match  scope value - https://management.azure.com/.default
+Please note - JWT config audiences value in step 3 above should match  scope value - https://management.azure.com
 ---
 
 ### 5️⃣ Verify Token with Application Gateway
