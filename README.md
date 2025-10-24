@@ -132,7 +132,6 @@ Only requests that pass JWT validation will be forwarded to the backend pool.
 
 ```bash
 CLIENT_ID="<your-client-id>"
-CLIENT_SECRET="<your-client-secret>"
 TENANT_ID="<your-tenant-id>"
 
 TOKEN=$(az account get-access-token \
@@ -150,7 +149,7 @@ Please note - JWT config audiences value in step 3 above should match  scope val
 Replace values and run:
 
 ```bash
-curl -k \
+curl -vk \
   -H "Authorization: Bearer $TOKEN" \
   https://<appgwFrontendIpOrDns>:<listenerPort>/<pathToListenerWithRoute>
 ```
