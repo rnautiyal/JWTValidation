@@ -7,7 +7,14 @@
 ![JWT](https://img.shields.io/badge/JWT-Validation-green)
 ![Status](https://img.shields.io/badge/Status-Preview-yellow)
 
-This repository demonstrates how to configure **JSON Web Token (JWT) validation** on **Azure Application Gateway** using an **Entra-registered application** and verify token-based access with Azure CLI.
+Azure Application Gateway provides built-in JSON Web Token (JWT) validation at the gateway routing layer. This capability verifies the integrity and validity of tokens in incoming requests and makes an allow or deny decision before forwarding traffic to backend services. Upon successful validation, the gateway adds the x-msft-entra-identity header and passes it to the backend.
+
+By performing token validation at the edge, Application Gateway helps simplify application architecture and enhance overall security posture.JWT validation in Application Gateway is stateless—each request must include a valid token for access to be granted. No session or cookie-based state is maintained, ensuring consistent token checks and compliance with Zero Trust principles.
+
+With JWT validation, Application Gateway can:
+- Verify token integrity using a trusted issuer and signing keys.
+- Validate claims such as audience, issuer, and expiration.
+- Block requests with invalid or missing tokens before they reach your backend.
 
 ---
 
